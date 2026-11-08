@@ -1,0 +1,4 @@
+interface:
+  display_name: "在线视频图文笔记"
+  short_description: "根据 B 站视频生成图文初稿与可独立阅读的详解版笔记"
+  default_prompt: "使用 $online-video-notes 整理这个视频，先保存图文初版，再生成独立阅读版。"

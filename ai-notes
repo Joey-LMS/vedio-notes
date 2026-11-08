@@ -1,0 +1,14 @@
+#!/bin/sh
+set -eu
+skill_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+export PYTHONDONTWRITEBYTECODE=1
+python_bin=${AI_NOTES_PYTHON:-python3}
+if ! command -v "$python_bin" >/dev/null 2>&1; then
+    printf '找不到 Python：%s。请查看 %s/requirements.md 并自行准备依赖。\n' "$python_bin" "$skill_dir" >&2
+    exit 1
+fi
+if ! "$python_bin" -c 'import sys; sys.exit(sys.version_info < (3, 10))'; then
+    printf '需要 Python 3.10 或以上。请查看 %s/requirements.md。\n' "$skill_dir" >&2
+    exit 1
+fi
+exec "$python_bin" "$skill_dir/scripts/ai_notes_cli.py" "$@"

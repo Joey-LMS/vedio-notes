@@ -1,0 +1,19 @@
+# Generated media, transcripts, notes and logs are not part of the skill.
+/runs/
+/.online-video-notes-state/
+/cache/
+/logs/
+.env
+.env.*
+*.log
+credentials.json
+secrets.json
+cookies.txt
+*.pem
+*.key
+*.p12
+*.pfx
+__pycache__/
+*.py[cod]
+.DS_Store
+._*
